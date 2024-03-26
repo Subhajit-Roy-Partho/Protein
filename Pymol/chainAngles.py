@@ -18,6 +18,9 @@ def angle_between_vectors(v1, v2):
     # Calculate the angle in radians and then convert to degrees
     angle_radians = np.arccos(np.clip(cos_angle, -1.0, 1.0))
     angle_degrees = np.degrees(angle_radians)
+    
+    if angle_degrees > 90: #making sure the values are within 0 to pi/2
+        angle_degrees=180-angle_degrees;
 
     return angle_degrees
 
